@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>¿Estás viendo lo mismo que yo?</title>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Fuente digital tipo reloj LED */
+    @font-face {
+      font-family: 'DS-Digital';
+      src: url('https://fonts.cdnfonts.com/s/16468/DS-DIGIB.woff') format('woff');
+      font-weight: bold;
+    }
+
+    .clock {
+      font-family: 'DS-Digital', monospace;
+      font-size: 200px;
+      color: #ff0000;
+      letter-spacing: 8px;
+      text-shadow:
+        0 0 10px #ff0000,
+        0 0 20px #ff0000,
+        0 0 40px #ff0000,
+        0 0 80px #ff0000;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.2s ease, text-shadow 0.3s ease;
+    }
+
+    .clock:hover {
+      transform: scale(1.05);
+      text-shadow:
+        0 0 20px #ff0000,
+        0 0 40px #ff0000,
+        0 0 80px #ff0000,
+        0 0 120px #ff0000;
+    }
+
+    .phrase {
+      font-size: 24px;
+      color: #fff;
+      margin-top: 40px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      .clock { font-size: 120px; }
+      .phrase { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="clock" id="clock" title="Haz clic para abrir TikTok">3:15</div>
+  <div class="phrase">¿Estás viendo lo mismo que yo?</div>
+
+  <script>
+    document.getElementById('clock').addEventListener('click', () => {
+      window.open('https://www.tiktok.com/@franciscohernndez9180?_t=ZS-90kb6kFJgJj&_r=1', '_blank');
+    });
+  </script>
+</body>
+</html>
